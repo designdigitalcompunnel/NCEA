@@ -52,6 +52,10 @@
 .skip-link:focus { transform: none; }
 [tabindex="-1"].skip-link { outline-offset: 0; }
 
+#site-header {
+  background: #FFFFFF;
+  backdrop-filter: none;
+}
 #site-header .logo-img img {
   width: 107.8px !important;
   height: auto !important;
