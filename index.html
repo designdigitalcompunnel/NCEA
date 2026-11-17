@@ -132,7 +132,7 @@
   .pcard.active { flex-grow: 5; cursor: default; }
   .pcard:not(.active):hover { transform: translateY(-6px); }
   .pcard:focus-visible { box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--charcoal); }
-  .pcard::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 2px, transparent 2px 22px); pointer-events: none; }
+  .pcard::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 2px, transparent 2px 22px); opacity: var(--pc-pattern-opacity, 1); pointer-events: none; }
   .pc-rail { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 30px 0; transition: opacity .4s var(--ease); }
   .pcard.active .pc-rail { opacity: 0; pointer-events: none; }
   .pc-num { font-size: 14px; font-weight: 600; opacity: .8; }
@@ -492,11 +492,6 @@
   
   .hc-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
   .hc-buttons { display: flex; gap: 8px; justify-content: flex-end; }
-  .hero-dots { display: flex; gap: 10px; align-items: center; }
-  .hero-dot { width: 8px; height: 8px; border-radius: 999px; border: 0; padding: 0; background: rgba(255,255,255,.45); cursor: pointer; transition: width .35s var(--ease), background .3s; }
-  .hero-dot:hover { background: rgba(255,255,255,.8); }
-  .hero-dot[aria-current="true"] { width: 26px; background: #FFFFFF; }
-  .hero-dot:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
   .hero-controls .hc-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; justify-content: stretch; }
 
   
@@ -861,14 +856,9 @@
   .ind-loop .loop-label { position: absolute; left: 28px; top: auto; bottom: 24px; width: auto; height: auto; display: inline-block; white-space: nowrap; line-height: 1.4; border-radius: 999px; }
   @media (max-width: 640px) { .ind-loop { aspect-ratio: 4 / 3; } }
   
-  #newsletter.cta { position: relative; overflow: hidden; isolation: isolate; }
-  #newsletter .cta-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; opacity: .5; z-index: -2; pointer-events: none; }
-  #newsletter::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,65,219,.72) 0%, rgba(4,28,44,.6) 100%); pointer-events: none; }
   #newsletter > .container { position: relative; z-index: 1; }
 
   
-  #newsletter::before { background: rgba(0,0,0,.6) !important; }
-  #newsletter .cta-bg { opacity: 1 !important; }
   #newsletter h2, #newsletter .cta-lead, #newsletter .cta-note, #newsletter .cta-eyebrow { text-shadow: 0 1px 3px rgba(0,0,0,.12); }
 
   
@@ -1016,8 +1006,6 @@ header {background:rgba(255,255,255,.975);}
 #platform .acc-panel li:hover{border-color:#0848B5!important;color:#0848B5!important;}
 #platform .btn-red {background:#136CFC!important;}
 
-#newsletter.cta {background:#136CFC!important;}
-#newsletter::before {background:linear-gradient(95deg,rgba(6,82,128,.85) 0%,rgba(7,104,156,.72) 56%,rgba(9,111,161,.52) 100%)!important;}
 #newsletter h2,#newsletter .cta-lead,#newsletter .cta-note,#newsletter .cta-eyebrow {color:#FFFFFF!important;text-shadow:0 2px 10px rgba(0,36,69,.42)!important;}
 #newsletter .cta-form input {color:#10233B!important;}
 #newsletter .cta-form input::placeholder {color:#48576A!important;opacity:1;}
@@ -1303,36 +1291,6 @@ img.apf-media, .rr-thumb img.apf-media, .rr-featured img, .loop img.apf-media {f
   pointer-events: none !important;
 }
 
-.hero-wrap .hero-dots {
-  position: absolute !important;
-  top: 50% !important;
-  right: 0 !important;
-  bottom: auto !important;
-  left: auto !important;
-  transform: translateY(-50%) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 11px !important;
-  pointer-events: auto !important;
-  z-index: 2 !important;
-  padding: 10px 6px !important;
-}
-.hero-wrap .hero-dot {
-  width: 9px !important;
-  height: 12px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,.54) !important;
-  box-shadow: 0 1px 8px rgba(0,0,0,.35) !important;
-  transition: height .28s ease, background .28s ease !important;
-}
-.hero-wrap .hero-dot[aria-current="true"] {
-  width: 9px !important;
-  height: 32px !important;
-  background: #FFFFFF !important;
-}
-.hero-wrap .hero-dot:focus-visible { outline: 3px solid #FFFFFF !important; outline-offset: 4px !important; }
 
 .hero-wrap .hc-buttons {
   position: absolute !important;
@@ -1350,9 +1308,6 @@ img.apf-media, .rr-thumb img.apf-media, .rr-featured img, .loop img.apf-media {f
 }
 @media (max-width: 640px) {
   .hero-wrap .hero-controls .hc-grid { width: calc(100% - 32px) !important; }
-  .hero-wrap .hero-dots { right: 0 !important; top: 62% !important; gap: 9px !important; padding: 8px 4px !important; }
-  .hero-wrap .hero-dot { width: 8px !important; height: 10px !important; }
-  .hero-wrap .hero-dot[aria-current="true"] { width: 8px !important; height: 24px !important; }
   
   .hero-wrap .hc-buttons { bottom: 38px !important; right: 0 !important; }
 }
@@ -1369,16 +1324,6 @@ img.apf-media, .rr-thumb img.apf-media, .rr-featured img, .loop img.apf-media {f
 @media (min-width: 641px) {
   .comm-loop { height: clamp(280px, 33.333vw, 400px); }
   .ind-loop { height: clamp(280px, 28.333vw, 340px); }
-}
-#newsletter .cta-bg { object-position: 50% 50%; }
-#newsletter::before {
-  background: linear-gradient(90deg, rgba(0, 0, 0, .36) 0%, rgba(0, 0, 0, .63) 38%, rgba(0, 0, 0, .68) 60%, rgba(0, 0, 0, .56) 75%, rgba(0, 0, 0, .24) 100%) !important;
-}
-@media (max-width: 640px) {
-  #newsletter .cta-bg { object-position: 42% 50%; }
-  #newsletter::before {
-    background: linear-gradient(180deg, rgba(0, 0, 0, .39), rgba(0, 0, 0, .69) 24%, rgba(0, 0, 0, .66) 77%, rgba(0, 0, 0, .36)) !important;
-  }
 }
 </style>
 
@@ -1463,21 +1408,10 @@ footer > .container { position: relative !important; z-index: 1 !important; }
 </header>
 <main id="top" tabindex="-1">
 <div class="hero-wrap">
-<section aria-label="Growing Eastern North Carolina." aria-roledescription="slide" class="hero slide hero-teal" id="hero"><video aria-hidden="true" class="hero-video apf-hero-film" loop="" muted="" playsinline="" poster="assets/regional-hero-poster.webp" preload="metadata"><source src="assets/regional-hero.mp4" type="video/mp4"></source></video>
-<div class="container">
-<span class="eyebrow">Eastern North Carolina</span>
-<h1 class="display"><span class="hl">Growing Eastern</span><span class="hl"><em>North Carolina.</em></span></h1>
-<p class="lead">We connect industry, education, and talent to build career pathways and help businesses grow across 29 counties in Eastern North Carolina.</p>
-<div class="hero-actions" style="display:flex;">
-<a class="btn btn-red" href="our-work.html">Explore Our Work <span class="arr" aria-hidden="true">→</span></a>
-<a class="btn btn-ghost" href="#region">Explore the Region</a>
-</div>
-</div>
-</section>
-<section aria-label="Building Talent. Growing Industry." aria-roledescription="slide" class="hero slide hero-navy" hidden="" id="hero-2"><video aria-hidden="true" class="hero-video apf-hero-film" loop="" muted="" playsinline="" poster="assets/industry-hero-poster.webp" preload="metadata"><source src="assets/industry-hero.mp4" type="video/mp4"></source></video>
+<section aria-labelledby="hero-title" class="hero slide hero-navy" id="hero"><video aria-hidden="true" class="hero-video apf-hero-film" loop="" muted="" playsinline="" poster="assets/industry-hero-poster.webp" preload="metadata"><source src="assets/industry-hero.mp4" type="video/mp4"></source></video>
 <div class="container">
 <span class="eyebrow">Industry &amp; Workforce</span>
-<h2 class="display slide-heading"><span class="hl">Building Talent.</span><span class="hl"><em>Growing Industry.</em></span></h2>
+<h1 class="display slide-heading" id="hero-title"><span class="hl">Building Talent.</span><span class="hl"><em>Growing Industry.</em></span></h1>
 <p class="lead">We bring schools, colleges, and employers together to prepare people for careers in Eastern North Carolina’s growing industries.</p>
 <div class="hero-actions" style="display:flex;">
 <a class="btn btn-red" href="our-work.html#employer-support">Find Employer Support <span class="arr" aria-hidden="true">→</span></a>
@@ -1485,7 +1419,7 @@ footer > .container { position: relative !important; z-index: 1 !important; }
 </div>
 </div>
 </section>
-<div aria-label="Hero slideshow controls" class="hero-controls" role="group"><div class="container hc-grid"><div></div><div aria-label="Choose banner" class="hero-dots" role="group"><button aria-current="true" aria-label="Show Growing Eastern North Carolina" class="hero-dot" data-index="0" type="button"></button><button aria-current="false" aria-label="Show Building talent and growing industry" class="hero-dot" data-index="1" type="button"></button></div><div class="hc-buttons"><button aria-label="Previous slide" class="hero-btn" id="hero-prev" type="button"><svg aria-hidden="true" height="14" viewbox="0 0 24 24" width="14"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></button><button aria-label="Pause all animation" aria-pressed="false" class="hero-btn" id="hero-pause" type="button"><svg aria-hidden="true" class="i-pause" height="12" viewbox="0 0 24 24" width="12"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"></path></svg><svg aria-hidden="true" class="i-play" height="12" viewbox="0 0 24 24" width="12"><path d="M8 5l11 7-11 7z" fill="currentColor"></path></svg></button><button aria-label="Next slide" class="hero-btn" id="hero-next" type="button"><svg aria-hidden="true" height="14" viewbox="0 0 24 24" width="14"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></button></div></div></div></div>
+<div class="hero-controls"><div class="container hc-grid"><div class="hc-buttons"><button aria-label="Pause all animation" class="hero-btn" id="hero-pause" type="button"><svg aria-hidden="true" class="i-pause" height="12" viewbox="0 0 24 24" width="12"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"></path></svg><svg aria-hidden="true" class="i-play" height="12" viewbox="0 0 24 24" width="12"><path d="M8 5l11 7-11 7z" fill="currentColor"></path></svg></button></div></div></div></div>
 <div class="container">
 <div class="stats-wrap reveal">
 <div class="stat-top cards">
@@ -1541,7 +1475,7 @@ footer > .container { position: relative !important; z-index: 1 !important; }
 <div class="pc-media has-gif"><img alt="Teacher and students work on a classroom robotics project" class="pc-gif apf-media" loading="lazy" src="assets/education-focus.webp"><span class="cap">Learning &amp; careers</span></div>
 </div>
 </article>
-<article aria-selected="false" class="pcard" role="tab" style="--c:var(--accent-purple);--t:#FFFFFF;" tabindex="0">
+<article aria-selected="false" class="pcard" role="tab" style="--c:var(--accent-purple);--t:#FFFFFF;--pc-pattern-opacity:.12;" tabindex="0">
 <div class="pc-rail"><span class="pc-num">03</span><span class="pc-name">Research &amp; Data</span><span class="pc-plus">+</span></div>
 <div class="pc-content">
 <div class="pc-text">
@@ -1731,7 +1665,6 @@ footer > .container { position: relative !important; z-index: 1 !important; }
 </div>
 </div>
 <section aria-labelledby="cta-title" class="cta" id="newsletter">
-<img alt="" aria-hidden="true" class="cta-bg apf-media" decoding="async" loading="lazy" src="assets/regional-updates.webp">
 <div class="container cta-inner reveal">
 <span class="eyebrow cta-eyebrow">News &amp; Updates</span>
 <h2 id="cta-title">Stay Connected <br><em>to Eastern NC.</em></h2>
@@ -1933,76 +1866,32 @@ footer > .container { position: relative !important; z-index: 1 !important; }
   document.querySelectorAll('#nav-left a').forEach(a => a.addEventListener('click', () => {
     document.getElementById('nav-left').classList.remove('open');
   }));
-  /* Respect reduced-motion: show a still frame instead of looping video */
+  /* Single hero video and page animation controls */
   (function () {
-    const v = document.querySelector('.hero-video');
-    if (!v) return;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.pause(); return; }
-    const p = v.play();
-    if (p && p.catch) p.catch(() => {});
-  })();
-  /* Hero slideshow controls and pause-all */
-  (function () {
-    const root = document.documentElement;
-    const slides = [...document.querySelectorAll('.hero-wrap > .hero.slide')];
-    const prev = document.getElementById('hero-prev');
-    const next = document.getElementById('hero-next');
-    const pause = document.getElementById('hero-pause');
-    const INTERVAL = 8000;
-    let idx = 0, timer = null;
-    let allPaused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const video = document.querySelector('#hero video');
+    const toggle = document.getElementById('hero-pause');
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = motion.matches;
 
-    function playVideosIn(el) { el.querySelectorAll('video').forEach(v => { v.play().catch(() => {}); }); }
-    function pauseVideosIn(el) { el.querySelectorAll('video').forEach(v => v.pause()); }
-
-    function show(i) {
-      idx = (i + slides.length) % slides.length;
-      document.querySelectorAll('.hero-dot').forEach((d, k) => d.setAttribute('aria-current', k === idx ? 'true' : 'false'));
-      slides.forEach((s, k) => {
-        const on = k === idx;
-        s.hidden = !on;
-        if (on) { if (!allPaused) playVideosIn(s); else pauseVideosIn(s); }
-        else pauseVideosIn(s);
-      });
-    }
-    function schedule() {
-      clearTimeout(timer);
-      if (!allPaused) timer = setTimeout(() => { show(idx + 1); schedule(); }, INTERVAL);
-    }
-    function setPaused(p) {
-      allPaused = p;
-      root.classList.toggle('pause-all', p);
-      pause.setAttribute('aria-pressed', p);
-      pause.setAttribute('aria-label', p ? 'Play all animation' : 'Pause all animation');
-      if (p) {
-        clearTimeout(timer);
-        document.querySelectorAll('video').forEach(v => v.pause());
+    function syncPlayback() {
+      if (paused || document.hidden) {
+        video.pause();
       } else {
-        document.querySelectorAll('video').forEach(v => { if (!slides.some(s => s.contains(v))) v.play().catch(() => {}); });
-        playVideosIn(slides[idx]);
-        schedule();
+        video.play().catch(() => {});
       }
+      document.documentElement.classList.toggle('pause-all', paused);
+      toggle.setAttribute('aria-label', paused ? 'Play all animation' : 'Pause all animation');
     }
 
-    prev.addEventListener('click', () => { show(idx - 1); schedule(); });
-    next.addEventListener('click', () => { show(idx + 1); schedule(); });
-    pause.addEventListener('click', () => setPaused(!allPaused));
-    document.addEventListener('keydown', e => {
-      if (e.key === ' ' && e.target === document.body) { e.preventDefault(); setPaused(!allPaused); }
+    toggle.addEventListener('click', () => {
+      paused = !paused;
+      syncPlayback();
     });
-
-    document.querySelectorAll('.hero-dot').forEach(d => d.addEventListener('click', () => { show(+d.dataset.index); schedule(); }));
-    show(0);
-    setPaused(allPaused);
-    if (allPaused) { root.classList.add('pause-all'); pause.setAttribute('aria-pressed', 'true'); pause.setAttribute('aria-label', 'Play all animation'); }
+    document.addEventListener('visibilitychange', syncPlayback);
+    motion.addEventListener('change', event => {
+      paused = event.matches;
+      syncPlayback();
+    });
+    syncPlayback();
   })();
-</script>
-<script>
-/* Ensure videos only play in the active hero slide. */
-document.addEventListener('visibilitychange',()=>{
-  document.querySelectorAll('.hero-wrap .hero video').forEach(v=>{
-    if(document.hidden || v.closest('.hero').hidden || document.documentElement.classList.contains('pause-all')) v.pause();
-    else v.play().catch(()=>{});
-  });
-});
 </script><script src="site.js" defer></script></body></html>

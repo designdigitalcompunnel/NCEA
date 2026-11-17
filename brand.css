@@ -180,14 +180,13 @@ main h2.display:not(.slide-heading) em {
   color: white !important;
   text-shadow: inherit;
 }
-.hero.slide:nth-of-type(2) .display {
+.hero.slide h1.slide-heading {
   font-family: 'Plus Jakarta Sans', 'Archivo', system-ui, sans-serif !important;
   font-size: clamp(44px, 5.25vw, 76px) !important;
   font-weight: 800 !important;
   line-height: 1.05 !important;
   letter-spacing: -.052em !important;
 }
-.hero.slide:nth-of-type(2) .hl { display: block; }
 .hero.slide .eyebrow {
   color: var(--accent-cyan) !important;
   letter-spacing: .18em !important;
@@ -208,7 +207,6 @@ main h2.display:not(.slide-heading) em {
   background: var(--accent-cyan) !important;
   outline-color: white !important;
 }
-.hero-wrap .hero-dot[aria-current="true"] { background: var(--accent-cyan) !important; }
 #work-video-toggle {
   position: absolute;
   z-index: 3;
@@ -228,12 +226,15 @@ main h2.display:not(.slide-heading) em {
   .hero.slide::after {
     background: linear-gradient(180deg, rgba(10,10,10,.69), rgba(10,10,10,.81)) !important;
   }
-  .hero.slide:nth-of-type(2) .display { font-size: clamp(38px,9.3vw,48px) !important; }
+  .hero.slide h1.slide-heading { font-size: clamp(38px,9.3vw,48px) !important; }
 }
 
 .apf-media, .hero .hero-video, .rr-hero .apf-research-film,
 .pc-media img.apf-media, .rr-feature-media img, .rr-thumb img {
   filter: saturate(1.18) contrast(1.045) brightness(1.025) !important;
+}
+#hero .hero-video {
+  filter: saturate(1.28) contrast(1.045) brightness(1.12) !important;
 }
 .stat-top.cards .feature-card:not(.tint) {
   padding: clamp(24px, 3.6vw, 44px);
@@ -324,9 +325,10 @@ main h2.display:not(.slide-heading) em {
   color: var(--brand-navy);
   transform: none;
 }
-#newsletter.cta { background: var(--brand-black) !important; }
-#newsletter::before {
-  background: linear-gradient(100deg, rgba(16,35,59,.91), rgba(10,10,10,.73)) !important;
+#newsletter.cta {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, .055) 1.15px, transparent 1.6px) center / 22px 22px repeat,
+    linear-gradient(120deg, var(--accent-blue-hover), #6033C3) !important;
 }
 .contact-panel {
   min-width: 0;
