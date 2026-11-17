@@ -1,0 +1,34 @@
+NC East Alliance website concept — media sources
+The supplied NC East Alliance logo is used in the header and adapted for the dark footer.
+Stock photos and footage are illustrative. The regional hero is filmed in Oak Island, North Carolina. Other stock media do not document specific NC East Alliance programs, participants, or facilities.
+Stock photo and footage license: https://www.pexels.com/license/
+
+assets/workforce-overview.webp — https://www.pexels.com/photo/5324969/
+assets/employer-focus.webp — https://www.pexels.com/photo/7691706/
+assets/education-focus.webp — https://www.pexels.com/photo/children-making-robots-7869085/
+assets/research-focus.webp — https://www.pexels.com/photo/7688336/
+assets/employer-partners.webp — https://www.pexels.com/photo/7841783/
+assets/education-partners.webp — https://www.pexels.com/photo/3182744/
+assets/research-partners.webp — https://www.pexels.com/photo/9034222/
+assets/maritime-partners.webp — https://www.pexels.com/photo/1181304/
+assets/resource-employers.webp — https://www.pexels.com/photo/3184325/
+assets/resource-education.webp — https://www.pexels.com/photo/1181622/
+assets/resource-research.webp — https://www.pexels.com/photo/3183153/
+assets/resource-maritime.webp — https://www.pexels.com/photo/container-ship-on-sea-20821680/
+assets/regional-community.webp — https://www.pexels.com/photo/5710191/
+assets/get-connected.webp — https://www.pexels.com/photo/3866369/
+assets/regional-updates.webp — https://www.pexels.com/photo/5366406/
+assets/featured-maritime.webp — https://www.pexels.com/photo/35627339/
+assets/directory-employer.webp — https://www.pexels.com/photo/3931436/
+assets/directory-schools.webp — https://www.pexels.com/photo/students-doing-a-science-experiment-inside-the-laboratory-8471840/
+assets/directory-employer-education.webp — https://www.pexels.com/photo/9301288/
+assets/directory-research.webp — https://www.pexels.com/photo/7947663/
+assets/directory-maritime.webp — https://www.pexels.com/photo/24244234/
+assets/directory-county.webp — https://www.pexels.com/photo/7688460/
+assets/directory-education-access.webp — https://www.pexels.com/photo/people-working-in-a-workshop-9242850/
+assets/directory-location.webp — https://www.pexels.com/photo/aerial-view-of-industrial-loading-dock-area-35501715/
+assets/directory-reentry.webp — https://www.pexels.com/photo/3184339/
+
+assets/regional-hero.mp4 and poster — Oak Island, North Carolina marshland footage by Thomas Farlow, exported at 1920 × 1080 from 4K stock: https://www.pexels.com/video/a-drone-video-of-a-marsh-landscape-5287549/
+assets/industry-hero.mp4 and poster — illustrative shipping-port footage by willy one, exported at 1920 × 1080 from 4K stock: https://www.pexels.com/video/aerial-view-of-industrial-shipping-port-36180004/
+assets/our-work-hero.mp4 and poster — robotics classroom footage by Vanessa Loring: https://www.pexels.com/video/a-female-teacher-teaching-the-kids-about-robotics-7868389/
